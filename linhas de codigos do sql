@@ -1,0 +1,34 @@
+CREATE TABLE SUSPEITOS (
+	nome varchar(90) not null,
+	idade int not null,
+	altura int not null,
+	cordocabelo varchar (90) not null,
+	sexo varchar (90) not null,
+	mascara varchar (90) not null,
+	primary key (nome)
+);
+
+CREATE TABLE RELATOS(
+	nome varchar (90) not null,
+	ordem int,
+	relato varchar (500),
+	mascara varchar (90),
+	primary key (nome)
+);
+
+CREATE TABLE ESTOQUE(
+	codigo varchar(90),
+	descriçao varchar(90),
+	data date
+);
+
+CREATE TABLE HERANCA (
+	suspeitos varchar(90),
+	heranca int,
+	foreign key (SUSPEITOS) references SUSPEITOS (nome)
+);
+
+--copy SUSPEITOS (nome, idade, altura, cordocabelo, sexo, mascara) from 'C:\Users\Lucky\Desktop\pgamdin\Trab\Suspeitos.csv' delimiter ';' csv header;
+--copy RELATOS (nome, ordem, relato, mascara) from 'C:\Users\Lucky\Desktop\pgamdin\Trab\Relatos.csv' delimiter ';' csv header;
+--copy ESTOQUE (codigo, descriçao, data) from 'C:\Users\Lucky\Desktop\pgamdin\Trab\Estoque.csv' delimiter ';' csv header;
+--copy HERANCA(suspeitos, heranca ) from 'C:\Users\Lucky\Desktop\pgamdin\Trab\Heranca.csv' delimiter ';' csv header;
